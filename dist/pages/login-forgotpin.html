@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../assets/css/main.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Red+Rose:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="../assets/images/favicon.ico"
+      type="image/x-icon"
+    />
+    <title>Login Forgot PIN</title>
+  </head>
+  <body>
+    <!-- Ini splash screen tampilan saat pertama masuk aplikasi -->
+    <div class="container max-w-[768px]">
+      <div
+        class="flex h-dvh flex-col items-center justify-center bg-green-50 p-4"
+      >
+        <div class="flex w-full flex-col">
+          <!-- Illustration -->
+          <img
+            src="../assets/images/forgot-password.svg"
+            alt="Illustration"
+            class="h-[160px]"
+          />
+          <!-- ./ Illustration -->
+
+          <!-- Title + Description-->
+          <div class="mb-5 mt-8 flex flex-col">
+            <h1 class="text-center text-lg font-semibold text-gray-900">
+              Lupa PIN
+            </h1>
+            <p class="text-center text-xs font-medium text-gray-400">
+              Segera cek email Anda setelah klik KIRIM RESET LINK
+            </p>
+          </div>
+          <!-- ./ Title + Description -->
+
+          <!-- Form -->
+          <form action="#" method="post" class="flex flex-col gap-4">
+            <!-- Input Email -->
+            <div class="flex flex-col gap-y-1.5">
+              <div class="relative">
+                <!-- pseudo class css di tailwind untuk validasi input menggunakan invalid: -->
+                <input
+                  type="email"
+                  class="peer w-full rounded-2xl border border-gray-400 bg-white p-3 pe-12 ps-12 text-sm text-gray-900 placeholder:text-gray-400 invalid:bg-red-200 invalid:text-red-900 invalid:caret-red-900 focus:outline-none focus:ring-2 focus:ring-green-400 focus:invalid:ring-red-900 disabled:border-gray-300 disabled:bg-gray-100"
+                  placeholder="Email"
+                />
+                <!-- Dan juga bisa menggunakan pseudo element css di tailwind bisa dikombinasikan contohnya focus dengan invalid-->
+                <!-- Selain itu di tailwindcss ada pseudo class untuk memberikan warna yang sama dengan element di sekitarnya menggunakan pseudoclass yang namanya peer, dan memberikan nilai pseudo class peer tersebut pada element yang ingin di ubah statenya dalam contoh berikut yang di ubah element div untuk icon arrow -->
+                <div
+                  class="absolute inset-y-0 start-0 flex items-center ps-4 text-icon-md text-gray-400 peer-invalid:text-red-400 peer-invalid:peer-focus:text-red-900"
+                >
+                  <span class="i-material-symbols-mail-rounded"></span>
+                </div>
+              </div>
+            </div>
+            <!-- ./ Input Email -->
+
+            <!-- Button Action -->
+            <button
+              type="button"
+              class="mt-3 inline-flex items-center justify-center gap-2 rounded-xl bg-brands-light-green p-2.5 text-sm font-semibold uppercase text-white hover:bg-brands-dark-green focus:outline-none focus:ring-2 focus:ring-green-400 disabled:cursor-not-allowed disabled:bg-gray-400"
+            >
+              <span class="i-material-symbols-send-rounded text-icon-md"></span>
+              <span>KIRIM RESET LINK</span>
+            </button>
+            <!-- ./ Button Action -->
+          </form>
+          <!-- ./ Form -->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

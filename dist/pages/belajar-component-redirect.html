@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../assets/css/main.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Red+Rose:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Membuat Component App menggunakan tailwindcss -->
+    <div class="container max-w-[768px]">
+      <div class="h-min-screen bg-blue-50 px-4 pb-12">
+        <!-- App Bar -->
+        <div class="flex items-center gap-5 bg-white p-4 text-gray-900">
+          <a
+            href="#"
+            class="hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-green-400"
+            onclick="history.back()"
+          >
+            <span
+              class="i-material-symbols-arrow-left-alt-rounded block text-icon-md"
+            ></span>
+          </a>
+          <p class="text-lg font-semibold">Index 2</p>
+        </div>
+        <!-- ./App Bar -->
+        <div class="h-8"></div>
+        <!-- navbar -->
+        <div class="flex justify-evenly bg-white">
+          <a
+            href="#"
+            class="group flex flex-col items-center p-3 text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-green-400"
+          >
+            <span
+              class="i-material-symbols-home-outline-rounded inline text-icon-md group-hover:hidden"
+            ></span>
+            <span
+              class="i-material-symbols-home-rounded hidden text-icon-md group-hover:inline"
+            ></span>
+            <span class="text-xs font-semibold">Beranda</span>
+          </a>
+          <a
+            href="#"
+            class="group flex flex-col items-center p-3 text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-green-400"
+          >
+            <span
+              class="i-material-symbols-receipt-outline-rounded inline text-icon-md group-hover:hidden"
+            ></span>
+            <span
+              class="i-material-symbols-receipt-rounded hidden text-icon-md group-hover:inline"
+            ></span>
+            <span class="text-xs font-semibold">Riwayat</span>
+          </a>
+          <a
+            href="#"
+            class="group flex flex-col items-center p-3 text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-green-400"
+          >
+            <span
+              class="i-material-symbols-person-outline-rounded inline text-icon-md group-hover:hidden"
+            ></span>
+            <span
+              class="i-material-symbols-person-rounded hidden text-icon-md group-hover:inline"
+            ></span>
+            <span class="text-xs font-semibold">Akun</span>
+          </a>
+        </div>
+        <!-- ./navbar -->
+      </div>
+    </div>
+  </body>
+</html>
