@@ -1,0 +1,346 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../assets/css/main.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Red+Rose:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="../assets/images/favicon.ico"
+      type="image/x-icon"
+    />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <!-- Ini splash screen tampilan saat pertama masuk aplikasi -->
+    <div class="container max-w-[768px]">
+      <div class="flex min-h-dvh flex-col gap-4 bg-green-50 p-4 pb-[80px]">
+        <div class="flex w-full flex-col">
+          <!-- Avatar + Name -->
+          <div class="mb-4 flex">
+            <a
+              href="#"
+              class="flex items-center gap-2 hover:opacity-70 focus:outline-none focus:ring-2 focus:ring-green-400"
+            >
+              <img
+                src="https://avatar.iran.liara.run/public/11"
+                alt="Avatar John Lenon"
+                class="size-8"
+              />
+              <span class="text-lg font-semibold text-gray-900"
+                >John Lenon</span
+              >
+            </a>
+          </div>
+          <!-- ./ Avatar + Name -->
+
+          <!-- Card Balance + Action-->
+          <div class="mb-8 flex flex-col">
+            <!-- Card Balance -->
+            <div
+              class="flex h-[165px] flex-col justify-between rounded-2xl bg-gradient-to-b from-brands-light-green to-emerald-400 p-5 text-white"
+            >
+              <h1 class="font-brand text-2xl font-bold">SAKUKU</h1>
+              <h2 class="flex items-center gap-2 text-2xl font-medium">
+                <span>Rp. 56.000.000,00</span>
+                <button
+                  type="button"
+                  class="i-material-symbols-visibility text-icon-lg"
+                ></button>
+              </h2>
+            </div>
+            <!-- ./ Card Balance -->
+
+            <!-- Card Action -->
+            <div class="mt-2 flex gap-3">
+              <!-- Button Outline Topup -->
+              <button
+                type="button"
+                class="inline-flex w-full items-center justify-center gap-2 rounded-xl border-2 border-brands-light-green bg-transparent p-2 text-xs font-semibold uppercase text-brands-light-green hover:bg-brands-light-green hover:text-white focus:outline-none focus:ring-2 focus:ring-green-400 disabled:cursor-not-allowed disabled:border-gray-300 disabled:bg-transparent disabled:text-gray-400"
+              >
+                <span
+                  class="i-material-symbols-download-rounded text-icon-sm"
+                ></span>
+                <span>Top Up</span>
+              </button>
+              <!-- ./ Button Outline Topup -->
+              <!-- Button Primary Transfer -->
+              <button
+                type="button"
+                class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brands-light-green p-2 text-xs font-semibold uppercase text-white hover:bg-brands-dark-green focus:outline-none focus:ring-2 focus:ring-green-400 disabled:cursor-not-allowed disabled:bg-gray-400"
+              >
+                <span
+                  class="i-material-symbols-upload-rounded text-icon-sm"
+                ></span>
+                <span>Transfer</span>
+              </button>
+              <!-- ./ Button Primary Transfer -->
+            </div>
+            <!-- ./ Card Action -->
+          </div>
+          <!-- ./ Card Balance + Action-->
+
+          <div class="rounded-[20px] bg-white p-2.5 shadow-md">
+            <!-- Card Header -->
+            <!-- Sedikit catatan baru, arbitrary value itu artinya nilai yang dapat ditentukan secara spesifik oleh developer contohnya rounded-[20px] -->
+            <div class="mb-2 flex justify-between p-2.5">
+              <p class="font-semibold text-gray-900">Riwayat Transaksi</p>
+              <a
+                href="#"
+                class="text-xs font-semibold text-brands-light-green hover:text-brands-light-green/70 focus:outline-none focus:ring-2 focus:ring-green-400"
+                >Lihat Lainnya</a
+              >
+            </div>
+            <!-- ./ Card Header -->
+
+            <!--Card List Items -->
+            <a
+              href="#"
+              class="flex justify-between rounded-2xl p-3 hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-green-400"
+            >
+              <!-- Left -->
+              <span class="flex items-center gap-5">
+                <!-- Ada studi kasus ketika icon/item terlalu berdempetan dengan content lain agar tidak menyusut solusinya memberikan class flex-shrink-0 -->
+                <span
+                  class="i-material-symbols-download-rounded flex-shrink-0 text-icon-lg text-brands-light-green"
+                ></span>
+                <span class="flex flex-col">
+                  <!-- Ada studi kasus ketika title/descriptionnya terlalu panjang pada suatu card list item -->
+                  <!-- Kita bisa memberi class line clamp untuk mengatasi kelebihan title/descriptionnya -->
+                  <span class="line-clamp-2 text-sm font-semibold text-gray-900"
+                    >Mr. Archie Botsford</span
+                  >
+                  <span class="line-clamp-1 text-xs text-gray-500"
+                    >20 Juni 2024</span
+                  >
+                </span>
+              </span>
+              <!-- ./ Left -->
+
+              <!-- Right -->
+              <span class="flex flex-shrink-0 items-center gap-2">
+                <span class="text-xs font-medium text-red-500"
+                  >- Rp.154.000</span
+                >
+                <span
+                  class="i-material-symbols-chevron-right-rounded text-icon-md text-gray-900"
+                ></span>
+              </span>
+              <!-- ./ Right -->
+            </a>
+            <div class="my-2.5 flex gap-4 whitespace-nowrap px-5">
+              <div class="flex-grow-1 h-[1px] w-full bg-gray-300"></div>
+            </div>
+            <!-- ./ Card List Items -->
+
+            <!--Card List Items -->
+            <a
+              href="#"
+              class="flex justify-between rounded-2xl p-3 hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-green-400"
+            >
+              <!-- Left -->
+              <span class="flex items-center gap-5">
+                <!-- Ada studi kasus ketika icon/item terlalu berdempetan dengan content lain agar tidak menyusut solusinya memberikan class flex-shrink-0 -->
+                <span
+                  class="i-material-symbols-download-rounded flex-shrink-0 text-icon-lg text-brands-light-green"
+                ></span>
+                <span class="flex flex-col">
+                  <!-- Ada studi kasus ketika title/descriptionnya terlalu panjang pada suatu card list item -->
+                  <!-- Kita bisa memberi class line clamp untuk mengatasi kelebihan title/descriptionnya -->
+                  <span class="line-clamp-2 text-sm font-semibold text-gray-900"
+                    >Oliver Kihn</span
+                  >
+                  <span class="line-clamp-1 text-xs text-gray-500"
+                    >20 Juni 2024</span
+                  >
+                </span>
+              </span>
+              <!-- ./ Left -->
+
+              <!-- Right -->
+              <span class="flex flex-shrink-0 items-center gap-2">
+                <span class="text-xs font-medium text-red-500"
+                  >- Rp.154.000</span
+                >
+                <span
+                  class="i-material-symbols-chevron-right-rounded text-icon-md text-gray-900"
+                ></span>
+              </span>
+              <!-- ./ Right -->
+            </a>
+            <div class="my-2.5 flex gap-4 whitespace-nowrap px-5">
+              <div class="flex-grow-1 h-[1px] w-full bg-gray-300"></div>
+            </div>
+            <!-- ./ Card List Items -->
+
+            <!--Card List Items -->
+            <a
+              href="#"
+              class="flex justify-between rounded-2xl p-3 hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-green-400"
+            >
+              <!-- Left -->
+              <span class="flex items-center gap-5">
+                <!-- Ada studi kasus ketika icon/item terlalu berdempetan dengan content lain agar tidak menyusut solusinya memberikan class flex-shrink-0 -->
+                <span
+                  class="i-material-symbols-download-rounded flex-shrink-0 text-icon-lg text-brands-light-green"
+                ></span>
+                <span class="flex flex-col">
+                  <!-- Ada studi kasus ketika title/descriptionnya terlalu panjang pada suatu card list item -->
+                  <!-- Kita bisa memberi class line clamp untuk mengatasi kelebihan title/descriptionnya -->
+                  <span class="line-clamp-2 text-sm font-semibold text-gray-900"
+                    >Nichole Kunze</span
+                  >
+                  <span class="line-clamp-1 text-xs text-gray-500"
+                    >20 Juni 2024</span
+                  >
+                </span>
+              </span>
+              <!-- ./ Left -->
+
+              <!-- Right -->
+              <span class="flex flex-shrink-0 items-center gap-2">
+                <span class="text-xs font-medium text-red-500"
+                  >- Rp.154.000</span
+                >
+                <span
+                  class="i-material-symbols-chevron-right-rounded text-icon-md text-gray-900"
+                ></span>
+              </span>
+              <!-- ./ Right -->
+            </a>
+            <div class="my-2.5 flex gap-4 whitespace-nowrap px-5">
+              <div class="flex-grow-1 h-[1px] w-full bg-gray-300"></div>
+            </div>
+            <!-- ./ Card List Items -->
+
+            <!--Card List Items -->
+            <a
+              href="#"
+              class="flex justify-between rounded-2xl p-3 hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-green-400"
+            >
+              <!-- Left -->
+              <span class="flex items-center gap-5">
+                <!-- Ada studi kasus ketika icon/item terlalu berdempetan dengan content lain agar tidak menyusut solusinya memberikan class flex-shrink-0 -->
+                <span
+                  class="i-material-symbols-download-rounded flex-shrink-0 text-icon-lg text-brands-light-green"
+                ></span>
+                <span class="flex flex-col">
+                  <!-- Ada studi kasus ketika title/descriptionnya terlalu panjang pada suatu card list item -->
+                  <!-- Kita bisa memberi class line clamp untuk mengatasi kelebihan title/descriptionnya -->
+                  <span class="line-clamp-2 text-sm font-semibold text-gray-900"
+                    >Della Leannon</span
+                  >
+                  <span class="line-clamp-1 text-xs text-gray-500"
+                    >20 Juni 2024</span
+                  >
+                </span>
+              </span>
+              <!-- ./ Left -->
+
+              <!-- Right -->
+              <span class="flex flex-shrink-0 items-center gap-2">
+                <span class="text-xs font-medium text-red-500"
+                  >- Rp.154.000</span
+                >
+                <span
+                  class="i-material-symbols-chevron-right-rounded text-icon-md text-gray-900"
+                ></span>
+              </span>
+              <!-- ./ Right -->
+            </a>
+            <div class="my-2.5 flex gap-4 whitespace-nowrap px-5">
+              <div class="flex-grow-1 h-[1px] w-full bg-gray-300"></div>
+            </div>
+            <!-- ./ Card List Items -->
+
+            <!--Card List Items -->
+            <a
+              href="#"
+              class="flex justify-between rounded-2xl p-3 hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-green-400"
+            >
+              <!-- Left -->
+              <span class="flex items-center gap-5">
+                <!-- Ada studi kasus ketika icon/item terlalu berdempetan dengan content lain agar tidak menyusut solusinya memberikan class flex-shrink-0 -->
+                <span
+                  class="i-material-symbols-download-rounded flex-shrink-0 text-icon-lg text-brands-light-green"
+                ></span>
+                <span class="flex flex-col">
+                  <!-- Ada studi kasus ketika title/descriptionnya terlalu panjang pada suatu card list item -->
+                  <!-- Kita bisa memberi class line clamp untuk mengatasi kelebihan title/descriptionnya -->
+                  <span class="line-clamp-2 text-sm font-semibold text-gray-900"
+                    >Angel Hagenes</span
+                  >
+                  <span class="line-clamp-1 text-xs text-gray-500"
+                    >20 Juni 2024</span
+                  >
+                </span>
+              </span>
+              <!-- ./ Left -->
+
+              <!-- Right -->
+              <span class="flex flex-shrink-0 items-center gap-2">
+                <span class="text-xs font-medium text-red-500"
+                  >- Rp.154.000</span
+                >
+                <span
+                  class="i-material-symbols-chevron-right-rounded text-icon-md text-gray-900"
+                ></span>
+              </span>
+              <!-- ./ Right -->
+            </a>
+            <div class="my-2.5 flex gap-4 whitespace-nowrap px-5"></div>
+            <!-- ./ Card List Items -->
+          </div>
+        </div>
+      </div>
+      <!-- Nav bar -->
+      <div
+        class="fixed bottom-0 left-0 z-10 flex w-full justify-evenly bg-white"
+      >
+        <a
+          href="#"
+          class="group flex flex-col items-center p-3 text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-green-400"
+        >
+          <span
+            class="i-material-symbols-home-outline-rounded inline text-icon-md group-hover:hidden"
+          ></span>
+          <span
+            class="i-material-symbols-home-rounded hidden text-icon-md group-hover:inline"
+          ></span>
+          <span class="text-xs font-semibold">Beranda</span>
+        </a>
+        <a
+          href="#"
+          class="group flex flex-col items-center p-3 text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-green-400"
+        >
+          <span
+            class="i-material-symbols-receipt-outline-rounded inline text-icon-md group-hover:hidden"
+          ></span>
+          <span
+            class="i-material-symbols-receipt-rounded hidden text-icon-md group-hover:inline"
+          ></span>
+          <span class="text-xs font-semibold">Riwayat</span>
+        </a>
+        <a
+          href="#"
+          class="group flex flex-col items-center p-3 text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-green-400"
+        >
+          <span
+            class="i-material-symbols-person-outline-rounded inline text-icon-md group-hover:hidden"
+          ></span>
+          <span
+            class="i-material-symbols-person-rounded hidden text-icon-md group-hover:inline"
+          ></span>
+          <span class="text-xs font-semibold">Akun</span>
+        </a>
+      </div>
+      <!-- ./Nav bar -->
+    </div>
+  </body>
+</html>
