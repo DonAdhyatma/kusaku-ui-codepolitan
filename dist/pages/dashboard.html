@@ -68,7 +68,8 @@
               <!-- Button Outline Topup -->
               <button
                 type="button"
-                class="inline-flex w-full items-center justify-center gap-2 rounded-xl border-2 border-brands-light-green bg-transparent p-2 text-xs font-semibold uppercase text-brands-light-green hover:bg-brands-light-green hover:text-white focus:outline-none focus:ring-2 focus:ring-green-400 disabled:cursor-not-allowed disabled:border-gray-300 disabled:bg-transparent disabled:text-gray-400"
+                class="open inline-flex w-full items-center justify-center gap-2 rounded-xl border-2 border-brands-light-green bg-transparent p-2 text-xs font-semibold uppercase text-brands-light-green hover:bg-brands-light-green hover:text-white focus:outline-none focus:ring-2 focus:ring-green-400 disabled:cursor-not-allowed disabled:border-gray-300 disabled:bg-transparent disabled:text-gray-400"
+                data-modal-target="modal-topup"
               >
                 <span
                   class="i-material-symbols-download-rounded text-icon-sm"
@@ -76,10 +77,12 @@
                 <span>Top Up</span>
               </button>
               <!-- ./ Button Outline Topup -->
+
               <!-- Button Primary Transfer -->
               <button
                 type="button"
-                class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brands-light-green p-2 text-xs font-semibold uppercase text-white hover:bg-brands-dark-green focus:outline-none focus:ring-2 focus:ring-green-400 disabled:cursor-not-allowed disabled:bg-gray-400"
+                class="open inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brands-light-green p-2 text-xs font-semibold uppercase text-white hover:bg-brands-dark-green focus:outline-none focus:ring-2 focus:ring-green-400 disabled:cursor-not-allowed disabled:bg-gray-400"
+                data-modal-target="modal-transfer"
               >
                 <span
                   class="i-material-symbols-upload-rounded text-icon-sm"
@@ -347,6 +350,445 @@
         </a>
       </div>
       <!-- ./Nav bar -->
+
+      <!-- Modal Top Up -->
+      <!-- Disini modal topup menggunakan element dialog, element interaktif dari html yang dihadirkan sejak maret 2022-->
+      <!-- Ketika membuat modal dialog menggunakan native element html <dialog> ini kita diharuskan menggunakan beberapa method javascript untuk menjalankan interaksinya seperti .showModal() .show() etc-->
+      <dialog
+        id="modal-topup"
+        class="m-0 size-full bg-transparent backdrop:bg-black/50 backdrop:backdrop-blur-lg open:flex open:max-h-none open:max-w-none open:flex-col open:justify-end"
+      >
+        <div class="flex flex-col">
+          <div class="flex justify-between px-6 pb-8">
+            <button
+              type="button"
+              class="invisible inline-flex items-center gap-2 rounded-xl bg-white p-2 text-xs font-semibold uppercase text-brands-light-green hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-green-400 disabled:cursor-not-allowed disabled:border-gray-300 disabled:bg-gray-200 disabled:text-gray-400"
+            >
+              <span
+                class="i-material-symbols-chevron-left-rounded text-icon-sm"
+              ></span>
+              <span>Back</span>
+            </button>
+            <button
+              type="button"
+              class="close inline-flex items-center gap-2 rounded-xl bg-white p-2 text-xs font-semibold uppercase text-brands-light-green hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-green-400 disabled:cursor-not-allowed disabled:border-gray-300 disabled:bg-gray-200 disabled:text-gray-400"
+              data-modal-target="modal-topup"
+            >
+              <span
+                class="i-material-symbols-close-rounded text-icon-sm"
+              ></span>
+              <span>Close</span>
+            </button>
+          </div>
+          <div class="flex flex-col gap-8 rounded-t-[36px] bg-white p-6">
+            <!-- Form Top up-->
+            <form action="#" method="post" class="flex flex-col gap-4">
+              <div class="flex flex-col gap-y-1.5">
+                <div class="relative">
+                  <!-- pseudo class css di tailwind untuk validasi input menggunakan invalid: -->
+                  <input
+                    type="number"
+                    inputmode="numeric"
+                    placeholder="Nominal Rupiah"
+                    class="peer w-full rounded-2xl border border-gray-400 bg-white p-3 ps-12 text-sm text-gray-900 placeholder:text-gray-400 invalid:bg-red-200 invalid:text-red-900 invalid:caret-red-900 focus:outline-none focus:ring-2 focus:ring-green-400 focus:invalid:ring-red-900 disabled:border-gray-300 disabled:bg-gray-100"
+                  />
+                  <!-- Dan juga bisa menggunakan pseudo element css di tailwind bisa dikombinasikan contohnya focus dengan invalid-->
+                  <!-- Selain itu di tailwindcss ada pseudo class untuk memberikan warna yang sama dengan element di sekitarnya menggunakan pseudoclass yang namanya peer, dan memberikan nilai pseudo class peer tersebut pada element yang ingin di ubah statenya dalam contoh berikut yang di ubah element div untuk icon arrow -->
+                  <div
+                    class="absolute inset-y-0 start-0 flex items-center ps-4 text-icon-md text-gray-400 peer-invalid:text-red-400 peer-invalid:peer-focus:text-red-900"
+                  >
+                    <span
+                      class="i-material-symbols-account-balance-wallet"
+                    ></span>
+                  </div>
+                </div>
+              </div>
+              <button
+                type="button"
+                class="inline-flex items-center justify-center gap-2 rounded-xl bg-brands-light-green p-2 text-xs font-semibold uppercase text-white hover:bg-brands-dark-green focus:outline-none focus:ring-2 focus:ring-green-400 disabled:cursor-not-allowed disabled:bg-gray-400"
+              >
+                <span
+                  class="i-material-symbols-send-rounded text-icon-sm"
+                ></span>
+                <span class="uppercase">Top Up</span>
+              </button>
+            </form>
+            <!-- ./ Form Top up-->
+          </div>
+        </div>
+      </dialog>
+      <!-- ./ Modal Top Up -->
+
+      <!-- Modal Transfer -->
+      <dialog
+        id="modal-transfer"
+        class="m-0 size-full bg-transparent backdrop:bg-black/50 backdrop:backdrop-blur-lg open:flex open:max-h-none open:max-w-none open:flex-col open:justify-end"
+      >
+        <div class="flex flex-col">
+          <div class="flex justify-between px-6 pb-8">
+            <button
+              type="button"
+              class="invisible inline-flex items-center gap-2 rounded-xl bg-white p-2 text-xs font-semibold uppercase text-brands-light-green hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-green-400 disabled:cursor-not-allowed disabled:border-gray-300 disabled:bg-gray-200 disabled:text-gray-400"
+              id="button-back-modal-content"
+              data-history-back="[]"
+            >
+              <span
+                class="i-material-symbols-chevron-left-rounded text-icon-sm"
+              ></span>
+              <span>Back</span>
+            </button>
+            <button
+              type="button"
+              class="close inline-flex items-center gap-2 rounded-xl bg-white p-2 text-xs font-semibold uppercase text-brands-light-green hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-green-400 disabled:cursor-not-allowed disabled:border-gray-300 disabled:bg-gray-200 disabled:text-gray-400"
+              data-modal-target="modal-transfer"
+            >
+              <span
+                class="i-material-symbols-close-rounded text-icon-sm"
+              ></span>
+              <span>Close</span>
+            </button>
+          </div>
+          <div class="flex flex-col gap-8 rounded-t-[36px] bg-white p-6">
+            <!-- Section: Account Check -->
+            <div id="modal-content--account-check">
+              <form action="#" method="post" class="flex w-full flex-col gap-4">
+                <!-- Logo + Search Contact Button -->
+                <div class="flex justify-between">
+                  <div class="flex items-center gap-4">
+                    <img
+                      src="../assets/images/logo-green.svg"
+                      alt="Logo SAKUKU"
+                      class="h-5"
+                    />
+                  </div>
+                  <a
+                    href="#"
+                    class="text-xs font-semibold text-brands-light-green hover:text-brands-light-green/70 focus:outline-none focus:ring-2 focus:ring-green-400"
+                    onclick="showSearchContact()"
+                    >Cari Kontak</a
+                  >
+                </div>
+                <!-- ./ Logo + Search Contact Button -->
+
+                <!-- Input + Button -->
+                <div class="flex flex-col gap-y-1.5">
+                  <div class="relative">
+                    <!-- pseudo class css di tailwind untuk validasi input menggunakan invalid: -->
+                    <input
+                      type="text"
+                      placeholder="Masukan SAKUKU ID"
+                      class="peer w-full rounded-2xl border border-gray-400 bg-white p-3 pe-12 text-sm text-gray-900 placeholder:text-gray-400 invalid:bg-red-200 invalid:text-red-900 invalid:caret-red-900 focus:outline-none focus:ring-2 focus:ring-green-400 focus:invalid:ring-red-900 disabled:border-gray-300 disabled:bg-gray-100"
+                    />
+                    <!-- Dan juga bisa menggunakan pseudo element css di tailwind bisa dikombinasikan contohnya focus dengan invalid-->
+                    <!-- Selain itu di tailwindcss ada pseudo class untuk memberikan warna yang sama dengan element di sekitarnya menggunakan pseudoclass yang namanya peer, dan memberikan nilai pseudo class peer tersebut pada element yang ingin di ubah statenya dalam contoh berikut yang di ubah element div untuk icon arrow -->
+                    <div
+                      class="absolute inset-y-0 end-0 flex items-center pe-4 text-icon-md text-gray-400 peer-invalid:text-red-400 peer-invalid:peer-focus:text-red-900"
+                    >
+                      <span class="i-material-symbols-search-rounded"></span>
+                    </div>
+                  </div>
+                </div>
+
+                <button
+                  type="button"
+                  class="inline-flex items-center justify-center gap-2 rounded-xl bg-brands-light-green p-2 text-xs font-semibold uppercase text-white hover:bg-brands-dark-green focus:outline-none focus:ring-2 focus:ring-green-400 disabled:cursor-not-allowed disabled:bg-gray-400"
+                >
+                  <span
+                    class="i-material-symbols-search-rounded text-icon-sm"
+                  ></span>
+                  <span class="uppercase">Cek Rekening</span>
+                </button>
+                <!-- ./ Input + Button -->
+              </form>
+            </div>
+            <!-- ./ Section: Account Check -->
+
+            <!-- Section: Search Contact -->
+            <div id="modal-content--search-contact" class="hidden">
+              <div class="flex w-full flex-col">
+                <!-- Card Header -->
+                <div class="mb-2 flex flex-col gap-y-1.5">
+                  <div class="relative">
+                    <!-- pseudo class css di tailwind untuk validasi input menggunakan invalid: -->
+                    <input
+                      id="my-input-text"
+                      type="text"
+                      class="peer w-full rounded-2xl border border-gray-400 bg-white p-3 pe-12 text-sm text-gray-900 placeholder:text-gray-400 invalid:bg-red-200 invalid:text-red-900 invalid:caret-red-900 focus:outline-none focus:ring-2 focus:ring-green-400 focus:invalid:ring-red-900 disabled:border-gray-300 disabled:bg-gray-100"
+                      placeholder="Cari nama orang / no rekening"
+                    />
+                    <!-- Dan juga bisa menggunakan pseudo element css di tailwind bisa dikombinasikan contohnya focus dengan invalid-->
+                    <!-- Selain itu di tailwindcss ada pseudo class untuk memberikan warna yang sama dengan element di sekitarnya menggunakan pseudoclass yang namanya peer, dan memberikan nilai pseudo class peer tersebut pada element yang ingin di ubah statenya dalam contoh berikut yang di ubah element div untuk icon arrow -->
+                    <div
+                      class="absolute inset-y-0 end-0 flex items-center pe-4 text-icon-md text-gray-400 peer-invalid:text-red-400 peer-invalid:peer-focus:text-red-900"
+                    >
+                      <span class="i-material-symbols-search-rounded"></span>
+                    </div>
+                  </div>
+                </div>
+                <!-- ./ Card Header -->
+
+                <!--Card List Items -->
+                <a
+                  href="#"
+                  class="flex justify-between rounded-2xl p-3 hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-green-400"
+                  onclick="showInputNominal()"
+                >
+                  <!-- Left -->
+                  <span class="flex items-center gap-5">
+                    <!-- Ada studi kasus ketika icon/item terlalu berdempetan dengan content lain agar tidak menyusut solusinya memberikan class flex-shrink-0 -->
+                    <span
+                      class="i-material-symbols-person-outline-rounded flex-shrink-0 text-icon-lg text-brands-light-green"
+                    ></span>
+                    <span class="flex flex-col">
+                      <!-- Ada studi kasus ketika title/descriptionnya terlalu panjang pada suatu card list item -->
+                      <!-- Kita bisa memberi class line clamp untuk mengatasi kelebihan title/descriptionnya -->
+                      <span
+                        class="line-clamp-2 text-sm font-semibold text-gray-900"
+                        >Jonathon Bayer</span
+                      >
+                      <span class="line-clamp-1 text-xs text-gray-500"
+                        >2957475257</span
+                      >
+                    </span>
+                  </span>
+                  <!-- ./ Left -->
+
+                  <!-- Right -->
+                  <span class="flex flex-shrink-0 items-center gap-2">
+                    <span
+                      class="i-material-symbols-chevron-right-rounded text-icon-md text-gray-900"
+                    ></span>
+                  </span>
+                  <!-- ./ Right -->
+                </a>
+                <div class="my-2.5 flex gap-4 whitespace-nowrap px-5">
+                  <div class="flex-grow-1 h-[1px] w-full bg-gray-300"></div>
+                </div>
+                <!-- ./ Card List Items -->
+                <!--Card List Items -->
+                <a
+                  href="#"
+                  class="flex justify-between rounded-2xl p-3 hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-green-400"
+                  onclick="showInputNominal()"
+                >
+                  <!-- Left -->
+                  <span class="flex items-center gap-5">
+                    <!-- Ada studi kasus ketika icon/item terlalu berdempetan dengan content lain agar tidak menyusut solusinya memberikan class flex-shrink-0 -->
+                    <span
+                      class="i-material-symbols-person-outline flex-shrink-0 text-icon-lg text-brands-light-green"
+                    ></span>
+                    <span class="flex flex-col">
+                      <!-- Ada studi kasus ketika title/descriptionnya terlalu panjang pada suatu card list item -->
+                      <!-- Kita bisa memberi class line clamp untuk mengatasi kelebihan title/descriptionnya -->
+                      <span
+                        class="line-clamp-2 text-sm font-semibold text-gray-900"
+                        >Carrie Hilll</span
+                      >
+                      <span class="line-clamp-1 text-xs text-gray-500"
+                        >2957475257</span
+                      >
+                    </span>
+                  </span>
+                  <!-- ./ Left -->
+
+                  <!-- Right -->
+                  <span class="flex flex-shrink-0 items-center gap-2">
+                    <span
+                      class="i-material-symbols-chevron-right-rounded text-icon-md text-gray-900"
+                    ></span>
+                  </span>
+                  <!-- ./ Right -->
+                </a>
+                <div class="my-2.5 flex gap-4 whitespace-nowrap px-5">
+                  <div class="flex-grow-1 h-[1px] w-full bg-gray-300"></div>
+                </div>
+                <!-- ./ Card List Items -->
+
+                <!--Card List Items -->
+                <a
+                  href="#"
+                  class="flex justify-between rounded-2xl p-3 hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-green-400"
+                  onclick="showInputNominal()"
+                >
+                  <!-- Left -->
+                  <span class="flex items-center gap-5">
+                    <!-- Ada studi kasus ketika icon/item terlalu berdempetan dengan content lain agar tidak menyusut solusinya memberikan class flex-shrink-0 -->
+                    <span
+                      class="i-material-symbols-person-outline-rounded flex-shrink-0 text-icon-lg text-brands-light-green"
+                    ></span>
+                    <span class="flex flex-col">
+                      <!-- Ada studi kasus ketika title/descriptionnya terlalu panjang pada suatu card list item -->
+                      <!-- Kita bisa memberi class line clamp untuk mengatasi kelebihan title/descriptionnya -->
+                      <span
+                        class="line-clamp-2 text-sm font-semibold text-gray-900"
+                        >Caleb Wolff</span
+                      >
+                      <span class="line-clamp-1 text-xs text-gray-500"
+                        >2957475257</span
+                      >
+                    </span>
+                  </span>
+                  <!-- ./ Left -->
+
+                  <!-- Right -->
+                  <span class="flex flex-shrink-0 items-center gap-2">
+                    <span
+                      class="i-material-symbols-chevron-right-rounded text-icon-md text-gray-900"
+                    ></span>
+                  </span>
+                  <!-- ./ Right -->
+                </a>
+                <div class="my-2.5 flex gap-4 whitespace-nowrap px-5">
+                  <div class="flex-grow-1 h-[1px] w-full bg-gray-300"></div>
+                </div>
+                <!-- ./ Card List Items -->
+
+                <!--Card List Items -->
+                <a
+                  href="#"
+                  class="flex justify-between rounded-2xl p-3 hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-green-400"
+                  onclick="showInputNominal()"
+                >
+                  <!-- Left -->
+                  <span class="flex items-center gap-5">
+                    <!-- Ada studi kasus ketika icon/item terlalu berdempetan dengan content lain agar tidak menyusut solusinya memberikan class flex-shrink-0 -->
+                    <span
+                      class="i-material-symbols-person-outline-rounded flex-shrink-0 text-icon-lg text-brands-light-green"
+                    ></span>
+                    <span class="flex flex-col">
+                      <!-- Ada studi kasus ketika title/descriptionnya terlalu panjang pada suatu card list item -->
+                      <!-- Kita bisa memberi class line clamp untuk mengatasi kelebihan title/descriptionnya -->
+                      <span
+                        class="line-clamp-2 text-sm font-semibold text-gray-900"
+                        >Lynda Beer</span
+                      >
+                      <span class="line-clamp-1 text-xs text-gray-500"
+                        >2957475257</span
+                      >
+                    </span>
+                  </span>
+                  <!-- ./ Left -->
+
+                  <!-- Right -->
+                  <span class="flex flex-shrink-0 items-center gap-2">
+                    <span
+                      class="i-material-symbols-chevron-right-rounded text-icon-md text-gray-900"
+                    ></span>
+                  </span>
+                  <!-- ./ Right -->
+                </a>
+                <div class="my-2.5 flex gap-4 whitespace-nowrap px-5">
+                  <div class="flex-grow-1 h-[1px] w-full bg-gray-300"></div>
+                </div>
+                <!-- ./ Card List Items -->
+
+                <!--Card List Items -->
+                <a
+                  href="#"
+                  class="flex justify-between rounded-2xl p-3 hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-green-400"
+                  onclick="showInputNominal()"
+                >
+                  <!-- Left -->
+                  <span class="flex items-center gap-5">
+                    <!-- Ada studi kasus ketika icon/item terlalu berdempetan dengan content lain agar tidak menyusut solusinya memberikan class flex-shrink-0 -->
+                    <span
+                      class="i-material-symbols-person-outline-rounded flex-shrink-0 text-icon-lg text-brands-light-green"
+                    ></span>
+                    <span class="flex flex-col">
+                      <!-- Ada studi kasus ketika title/descriptionnya terlalu panjang pada suatu card list item -->
+                      <!-- Kita bisa memberi class line clamp untuk mengatasi kelebihan title/descriptionnya -->
+                      <span
+                        class="line-clamp-2 text-sm font-semibold text-gray-900"
+                        >Jose Spinka</span
+                      >
+                      <span class="line-clamp-1 text-xs text-gray-500"
+                        >2957475257</span
+                      >
+                    </span>
+                  </span>
+                  <!-- ./ Left -->
+
+                  <!-- Right -->
+                  <span class="flex flex-shrink-0 items-center gap-2">
+                    <span
+                      class="i-material-symbols-chevron-right-rounded text-icon-md text-gray-900"
+                    ></span>
+                  </span>
+                  <!-- ./ Right -->
+                </a>
+                <div class="my-2.5 flex gap-4 whitespace-nowrap px-5">
+                  <div class="flex-grow-1 h-[1px] w-full bg-gray-300"></div>
+                </div>
+                <!-- ./ Card List Items -->
+              </div>
+            </div>
+            <!-- ./ Section: Search Contact -->
+
+            <!-- Section: Input Nominal -->
+            <div id="modal-content--input-nominal" class="hidden">
+              <form action="#" method="post" class="flex w-full flex-col gap-4">
+                <!-- Logo + Search Contact Button -->
+                <div class="flex justify-between">
+                  <div class="flex items-center gap-4">
+                    <img
+                      src="../assets/images/logo-green.svg"
+                      alt="Logo SAKUKU"
+                      class="h-5"
+                    />
+                  </div>
+                  <div class="flex items-center gap-2 text-xs font-medium">
+                    <span>Jonathon Bayer</span>
+                    <span
+                      class="i-material-symbols-circle text-[4px] text-gray-500"
+                    ></span>
+                    <span>2957475257</span>
+                  </div>
+                  <a
+                    href="#"
+                    class="text-xs font-semibold text-brands-light-green hover:text-brands-light-green/70 focus:outline-none focus:ring-2 focus:ring-green-400"
+                    onclick="showSearchContact()"
+                    >Cari Kontak</a
+                  >
+                </div>
+                <!-- ./ Logo + Search Contact Button -->
+
+                <!-- Input + Button -->
+                <div class="flex flex-col gap-y-1.5">
+                  <div class="relative">
+                    <!-- pseudo class css di tailwind untuk validasi input menggunakan invalid: -->
+                    <input
+                      type="number"
+                      inputmode="numeric"
+                      placeholder="Nominal Rupiah"
+                      class="peer w-full rounded-2xl border border-gray-400 bg-white p-3 ps-12 text-sm text-gray-900 placeholder:text-gray-400 invalid:bg-red-200 invalid:text-red-900 invalid:caret-red-900 focus:outline-none focus:ring-2 focus:ring-green-400 focus:invalid:ring-red-900 disabled:border-gray-300 disabled:bg-gray-100"
+                    />
+                    <!-- Dan juga bisa menggunakan pseudo element css di tailwind bisa dikombinasikan contohnya focus dengan invalid-->
+                    <!-- Selain itu di tailwindcss ada pseudo class untuk memberikan warna yang sama dengan element di sekitarnya menggunakan pseudoclass yang namanya peer, dan memberikan nilai pseudo class peer tersebut pada element yang ingin di ubah statenya dalam contoh berikut yang di ubah element div untuk icon arrow -->
+                    <div
+                      class="absolute inset-y-0 start-0 flex items-center ps-4 text-icon-md text-gray-400 peer-invalid:text-red-400 peer-invalid:peer-focus:text-red-900"
+                    >
+                      <span
+                        class="i-material-symbols-account-balance-wallet"
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+
+                <button
+                  type="button"
+                  class="inline-flex items-center justify-center gap-2 rounded-xl bg-brands-light-green p-2 text-xs font-semibold uppercase text-white hover:bg-brands-dark-green focus:outline-none focus:ring-2 focus:ring-green-400 disabled:cursor-not-allowed disabled:bg-gray-400"
+                >
+                  <span class="i-material-symbols-send text-icon-sm"></span>
+                  <span class="uppercase">Lanjut Kirim</span>
+                </button>
+                <!-- ./ Input + Button -->
+              </form>
+            </div>
+            <!-- ./ Section: Input Nominal -->
+          </div>
+        </div>
+      </dialog>
+      <!-- ./ Modal Transfer -->
     </div>
   </body>
 </html>
